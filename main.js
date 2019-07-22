@@ -23,9 +23,27 @@ const trucks = [
         model: "1500",
         color: "white",
     },
-
-
-
-
-
 ]
+
+// Todo Create a place to inject the HTML within the <body> tag
+const whereToDisplayTheTrucks = document.querySelector("#container");
+
+// todo Create an HTML representation of the data
+const createTruckEntryComponent = (date, manufacturer, model, color) => {
+    return `
+        <section class="trucks">
+            <div>${date}</div>
+            <div><${manufacturer}/div>
+            <div>${model}</div>
+            <div>${color}</div>
+        </section>    
+    `
+}
+
+// todo Invoke the function 
+// todo Inject the HTML
+trucks.forEach(truck => {
+    const htmlRepresentation = createTruckEntryComponent(truck.date, truck.manufacturer, truck.model, truck.color)
+    whereToDisplayTheTrucks.innerHTML += htmlRepresentation
+
+    });
